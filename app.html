@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Consulting Brain Teaser</title>
+    <style>
+        body { font-family: 'Segoe UI', sans-serif; background-color: #002d62; color: white; text-align: center; padding: 50px; }
+        .container { background: white; color: #333; padding: 30px; border-radius: 15px; max-width: 500px; margin: auto; box-shadow: 0 10px 20px rgba(0,0,0,0.3); }
+        button { background-color: #0056b3; color: white; border: none; padding: 10px 20px; border-radius: 5px; cursor: pointer; font-size: 16px; margin-top: 10px; }
+        button:hover { background-color: #003d80; }
+        input { padding: 10px; width: 80%; margin-top: 10px; border: 1px solid #ccc; border-radius: 5px; }
+        #feedback { margin-top: 20px; font-weight: bold; }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>Market Sizing Challenge</h1>
+        <p id="question">How many smartphones are sold in the US every year?</p>
+        <input type="number" id="userGuess" placeholder="Enter your guess (in millions)">
+        <br>
+        <button onclick="checkGuess()">Submit Answer</button>
+        <div id="feedback"></div>
+        <br>
+        <a href="scratch.html" style="color: #0056b3; text-decoration: none; font-size: 14px;">← Back to Scratch Page</a>
+    </div>
+
+    <script>
+        function checkGuess() {
+            const guess = document.getElementById('userGuess').value;
+            const feedback = document.getElementById('feedback');
+            const actual = 120; // Rough estimate in millions for US annual sales
+
+            if (guess == "") {
+                feedback.innerHTML = "Please enter a number!";
+                return;
+            }
+
+            const difference = Math.abs(guess - actual);
+            
+            if (difference <= 20) {
+                feedback.innerHTML = "🎯 Excellent! You're within the consulting range. (Approx 120M)";
+                feedback.style.color = "green";
+            } else if (difference <= 50) {
+                feedback.innerHTML = "📈 Decent estimate, but a bit off. The target is around 120M.";
+                feedback.style.color = "orange";
+            } else {
+                feedback.innerHTML = "❌ Way off! Consultants need tighter estimates. It's about 120M.";
+                feedback.style.color = "red";
+            }
+        }
+    </script>
+</body>
+</html>

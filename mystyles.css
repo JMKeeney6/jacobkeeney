@@ -1,0 +1,35 @@
+/* Requirement: Font Family & Background Color */
+body {
+    background-color: #f4f7f9;
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    color: #333;
+    line-height: 1.6;
+    padding: 40px;
+}
+
+/* Requirement: 4+ Style Definitions */
+h1 {
+    color: #002d62; /* Consulting Blue */
+    text-align: center;
+}
+
+h2 {
+    color: #0056b3;
+    border-bottom: 2px solid #0056b3;
+}
+
+nav {
+    text-align: center;
+    margin-bottom: 30px;
+    font-weight: bold;
+}
+
+/* Requirement: 3 Divs & Positioning (Centering) */
+#section1, #section2, #section3 {
+    background-color: #ffffff;
+    padding: 25px;
+    margin: 20px auto; /* Centers the divs */
+    max-width: 800px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
